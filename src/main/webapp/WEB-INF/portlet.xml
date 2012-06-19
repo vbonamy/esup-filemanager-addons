@@ -45,12 +45,20 @@
             <keywords>esup-filemanager-dlportlet</keywords>
         </portlet-info>  
  
-		<supported-publishing-event>
+		<supported-processing-event>
 			<qname xmlns:x="https://www.esup-portail.org/schemas/esup-filemanager">x:DownloadResponse</qname>
-		</supported-publishing-event>
+		</supported-processing-event>
         
+        <supported-publishing-event>
+			<qname xmlns:x="https://www.esup-portail.org/schemas/esup-filemanager">x:DownloadRequest</qname>
+		</supported-publishing-event>
+	
     </portlet>
 
+    <event-definition>
+        <qname xmlns:x="https://www.esup-portail.org/schemas/esup-filemanager">x:DownloadRequest</qname>
+        <value-type>org.esupportail.portlet.filemanager.api.DownloadRequest</value-type>
+    </event-definition>
 	<event-definition>
         <qname xmlns:x="https://www.esup-portail.org/schemas/esup-filemanager">x:DownloadResponse</qname>
         <value-type>org.esupportail.portlet.filemanager.api.DownloadResponse</value-type>

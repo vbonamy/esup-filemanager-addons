@@ -37,6 +37,8 @@ public class DlPortletControllerEvents {
     @EventMapping(EsupFileManagerConstants.DOWNLOAD_RESPONSE_QNAME_STRING)
     public void handleDownloadResult(EventRequest request) {
         
+    	log.info("DlPortletControllerEvents.handleDownloadResult from EsupFilemanager-dlportlet is called");
+    	
     	final Event event = request.getEvent();
         final DownloadResponse downloadResponse = (DownloadResponse) event.getValue();
 
