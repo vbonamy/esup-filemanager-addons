@@ -4,9 +4,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.esupportail.portlet.filemanager</groupId>
-	<artifactId>esup-filemanager-dlportlet</artifactId>
+	<artifactId>esup-filemanager-addons</artifactId>
 	<packaging>war</packaging>
-	<name>esup-filemanager-dlportlet</name>
+	<name>esup-filemanager-addons</name>
 	<version>3.0.0-SNAPSHOT</version>
 
 	<repositories>
@@ -118,24 +118,24 @@
 			</exclusions>
 		</dependency>
 
-	<dependency>
-  		<groupId>org.slf4j</groupId>
- 		<artifactId>slf4j-api</artifactId>
-  	    <version>1.6.2</version>
-	</dependency>
-	
-    <dependency>
-    	<groupId>org.aspectj</groupId>
-    	<artifactId>aspectjrt</artifactId>
-    	<version>1.6.1</version>
-    </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.2</version>
+		</dependency>
 
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>1.6.1</version>
-    </dependency>
-    
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc-portlet</artifactId>
@@ -178,7 +178,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<warName>esup-filemanager-dlportlet</warName>
+					<warName>esup-filemanager-addons</warName>
 				</configuration>
 				<version>2.0.2</version>
 			</plugin>
@@ -188,7 +188,7 @@
 				<version>7.1.6.v20100715</version>
 				<configuration>
 					<webAppConfig>
-						<contextPath>/esup-filemanager-dlportlet</contextPath>
+						<contextPath>/esup-filemanager-addons</contextPath>
 					</webAppConfig>
 				</configuration>
 				<dependencies>
@@ -243,3 +243,4 @@
 	</build>
 
 </project>
+

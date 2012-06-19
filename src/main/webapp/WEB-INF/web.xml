@@ -22,11 +22,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd">
 	
-    <display-name>esup-filemanager-dlportlet</display-name>
+    <display-name>esup-filemanager-addons</display-name>
     
     <context-param>
         <param-name>webAppRootKey</param-name>
-        <param-value>esup-filemanager-dlportlet</param-value>
+        <param-value>esup-filemanager-addons</param-value>
     </context-param>
     <context-param>
         <param-name>log4jExposeWebAppRoot</param-name>
