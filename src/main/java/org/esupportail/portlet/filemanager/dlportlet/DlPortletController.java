@@ -56,7 +56,7 @@ public class DlPortletController {
     }
     
     @RequestMapping("VIEW")
-    protected ModelAndView renderView(@RequestParam(value = "url", required=false) String url, 
+    public ModelAndView renderView(@RequestParam(value = "url", required=false) String url, 
     		RenderRequest request, RenderResponse response) throws Exception {	
 		ModelMap model = new ModelMap();     
 		model.put("url", url);
