@@ -18,23 +18,18 @@ package org.esupportail.portlet.filemanager.dlportlet;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import javax.portlet.Event;
-import javax.portlet.EventRequest;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
 import org.apache.log4j.Logger;
 import org.esupportail.portlet.filemanager.EsupFileManagerConstants;
 import org.esupportail.portlet.filemanager.api.DownloadRequest;
-import org.esupportail.portlet.filemanager.api.DownloadResponse;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.portlet.ModelAndView;
-import org.springframework.web.portlet.bind.annotation.ActionMapping;
-import org.springframework.web.portlet.bind.annotation.EventMapping;
 
 @Controller
 @Scope("request")
@@ -42,7 +37,14 @@ public class DlPortletController {
 
 	protected Logger log = Logger.getLogger(DlPortletController.class);
 
-    @ActionMapping
+    
+    @RequestMapping("VIEW")
+    public ModelAndView renderView(RenderRequest request, RenderResponse response) {	
+		ModelMap model = new ModelMap();     
+    	return new ModelAndView("view-portlet", model);
+    }
+    
+	@RequestMapping(value = {"VIEW"}, params = {"action=downloadUrl"})
     public void downloadUrl(@RequestParam(value = "url") String url,
             ActionRequest request, ActionResponse response) {
 
@@ -54,22 +56,5 @@ public class DlPortletController {
         response.setEvent(EsupFileManagerConstants.DOWNLOAD_REQUEST_QNAME, urlObj);
         response.setRenderParameter("url", url);
     }
-    
-    @RequestMapping("VIEW")
-    public ModelAndView renderView(@RequestParam(value = "url", required=false) String url, 
-    		RenderRequest request, RenderResponse response) throws Exception {	
-		ModelMap model = new ModelMap();     
-		model.put("url", url);
-    	return new ModelAndView("view-portlet", model);
-    }
-    
-    @EventMapping(EsupFileManagerConstants.DOWNLOAD_RESPONSE_QNAME_STRING)
-    public void handleSearchResult(EventRequest request) {
-        
-    	final Event event = request.getEvent();
-        final DownloadResponse downloadResponse = (DownloadResponse) event.getValue();
-
-        log.info("downloadResponse : " + downloadResponse.getSummary());
-    }
-
+	
 }

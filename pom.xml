@@ -118,6 +118,12 @@
 			</exclusions>
 		</dependency>
 
+	<dependency>
+  		<groupId>org.slf4j</groupId>
+ 		<artifactId>slf4j-api</artifactId>
+  	    <version>1.6.2</version>
+	</dependency>
+	
     <dependency>
     	<groupId>org.aspectj</groupId>
     	<artifactId>aspectjrt</artifactId>
@@ -215,7 +221,7 @@
 				<configuration>
 
 					<!-- Comma-separated list of portlets to be prototyped -->
-					<portletNames>esup-filemanager</portletNames>
+					<portletNames>esup-filemanager-dlportlet</portletNames>
 
 					<!-- To use custom CSS in the portal -->
 					<cssUrls>
