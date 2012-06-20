@@ -30,7 +30,7 @@
         <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
         <init-param>
             <name>contextConfigLocation</name>
-            <value>WEB-INF/context/portlet/portletContext.xml</value>
+            <value>WEB-INF/context/portlet/dlPortletContext.xml</value>
         </init-param>
         <expiration-cache>0</expiration-cache>
         <supports>
@@ -54,6 +54,8 @@
 		</supported-publishing-event>
 	
     </portlet>
+
+
 
     <event-definition>
         <qname xmlns:x="https://www.esup-portail.org/schemas/esup-filemanager">x:DownloadRequest</qname>

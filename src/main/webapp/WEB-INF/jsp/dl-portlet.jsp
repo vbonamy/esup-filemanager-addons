@@ -26,37 +26,36 @@
 <portlet:defineObjects />
 
 <c:set var="n">
-  <portlet:namespace />
+	<portlet:namespace />
 </c:set>
 
-   <div class="portlet-section">
-	<spring:message code="downloadAwaiting" arguments="${url}"/>
-   </div>
+<div class="portlet-section">
+
+	<div class="portlet-section-body">
+		<spring:message code="downloadAwaiting" arguments="${url}" />
+	</div>
+
+	<div class="portlet-section-body">
+
+		<portlet:actionURL var="formDownloadUrl">
+			<portlet:param name="action" value="downloadUrl" />
+		</portlet:actionURL>
+
+		<form:form action="${formDownloadUrl}" method="post">
+
+			<label> <spring:message code="downloadUrl" />
+			</label>
+			<input type="text" name="url" />
+
+			<input type="submit" value="<spring:message code="download"/>"
+				name="createFolder" />
 
 
-			<div class="portlet-section-body">
-
-			<div class="portlet-section-body">
-
-<portlet:actionURL var="formDownloadUrl">
-  <portlet:param name="action" value="downloadUrl"/>
-</portlet:actionURL>
-
-      <form:form action="${formDownloadUrl}" method="post">
-
-        <label>
-          <spring:message code="downloadUrl"/>
-        </label>
-        <input type="text" name="url"/>
-
-        <input type="submit" value="<spring:message code="download"/>" name="createFolder"/>
+		</form:form>
 
 
-      </form:form>
+	</div>
 
-
-    </div>
-
-  </div>
+</div>
 
 

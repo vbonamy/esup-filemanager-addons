@@ -39,9 +39,11 @@ public class DlPortletController {
 
     
     @RequestMapping("VIEW")
-    public ModelAndView renderView(RenderRequest request, RenderResponse response) {	
+    public ModelAndView renderView(@RequestParam(required=false) String url, 
+    		RenderRequest request, RenderResponse response) {	
 		ModelMap model = new ModelMap();     
-    	return new ModelAndView("view-portlet", model);
+		model.put("url", url);
+    	return new ModelAndView("dl-portlet", model);
     }
     
 	@RequestMapping(value = {"VIEW"}, params = {"action=downloadUrl"})
